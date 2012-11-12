@@ -1,3 +1,5 @@
+<%= render :partial => 'shared/recipe', :collection => @recipes, :as => :recipe %>
+
 <h1>Listing recipes</h1>
 
 <table>
@@ -16,7 +18,7 @@
   <tr>
     <td><%= recipe.name %></td>
     <td><%= recipe.steps %></td>
-    <td><%= recipe.photo %></td>
+    <td><%= image_tag(recipe.photo) %></td>
     <td><%= recipe.serves %></td>
     <td><%= recipe.rating %></td>
     <td><%= link_to 'Show', recipe %></td>

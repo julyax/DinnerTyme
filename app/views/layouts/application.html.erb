@@ -7,16 +7,43 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+<div class="container">
+	<div class="row">
+			<div class="span3">
+				<%=link_to image_tag('dinnertyme.png', :class => "img-rounded"), root_path %>
+			</div>
+			
+			<div class="span9">
+				<br/>
+				<br/>
+				<br/>
+				<h1>It's DinnerTyme!</h1>
+				<cite>Eat your heart out</cite>
+			</div>
 
-    <div id="nav">
-        <ul>
-            <li><%= link_to 'Home', root_path %>
-            <li><%= link_to 'Kitchens', kitchens_path %>
-            <li><%= link_to 'Recipes', recipes_path %>
-	        <li><%= link_to 'Ingredients', ingredients_path %>
-        </ul>
-    </div>
-    <div id="content"> <%= yield %> </div>
+	</div><!-- end row 1 div -->
+	<div class="row">
+		<div class="span12">
+				<div class="navbar navbar-inverse">
+					<div class="navbar-inner">
+
+						<ul class="nav">
+							<%= create_navlink('Kitchens', kitchens_path) %>
+							<%= create_navlink('Recipes', recipes_path) %>
+							<%= create_navlink('Ingredients', ingredients_path) %>						
+						</ul>
+					</div>
+		</div>
+	</div>
+</header>	
+<div class="container">
+	<div class="row">
+		<div class="span12">
+			<%= yield %>
+		</div>
+	</div>
+</div><!-- end container div -->
 
 </body>
 </html>

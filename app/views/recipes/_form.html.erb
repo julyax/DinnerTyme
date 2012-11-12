@@ -21,7 +21,8 @@
   </div>
   <div class="field">
     <%= f.label :photo %><br />
-    <%= f.text_field :photo %>
+    <%= f.file_field :photo %>
+    <%= f.text_field :remote_photo_url %>
   </div>
   <div class="field">
     <%= f.label :serves %><br />
@@ -34,4 +35,15 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
+  <div class="field">
+	  <% Ingredient.all.each do |ingredient| %>
+	    <%= ingredient.name %>
+	    <%= check_box_tag 'recipe[ingredient_ids][]', ingredient.id, @recipe.ingredients.include?(ingredient) %>
+	  <% end %>
+	
+  </div>
+  <div class="field">
+    <%= f.label :kitchen_id %><br />
+    <%= f.select :kitchen_id, Kitchen.all.map{|k|[k.name, k.id]}, {:prompt => "Pick a Kitchen"} %>
 <% end %>

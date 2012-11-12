@@ -1,1 +1,19 @@
-Welcome to DinnerTyme!
+<div>
+	
+	<div class="row">
+		<div class="span4">	
+			<%=link_to image_tag('tableset1.jpeg', :class =>"img-polaroid"), kitchens_path%>
+			<a class='btn btn-large' href='/kitchens'>Browse Kitchens</a>		
+		</div>
+		<div class="span4">
+			<%=link_to image_tag('dinnerserved1.jpeg', :class =>"img-polaroid"), new_kitchen_path%>
+			<a class='btn btn-large' href='kitchens/new'>Create New Kitchen</a>			
+		</div>
+		<div class="span4">
+			<%=link_to image_tag('oysters.jpeg', :class =>"img-polaroid"), recipes_path%>
+			<a class='btn btn-large' href='recipes'>Browse Recipes</a>			
+		</div>		
+	</div>
+
+</div>
+

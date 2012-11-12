@@ -9,6 +9,8 @@ gem 'pg'
 gem 'annotate'
 gem 'pry-rails'
 gem 'bcrypt-ruby'
+gem 'carrierwave'
+gem 'rmagick'
 
 
 # Gems used only for assets and not required
